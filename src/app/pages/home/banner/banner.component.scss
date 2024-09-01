@@ -1,0 +1,130 @@
+@import "variables";
+.hero-section {
+  margin: -60px auto 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  // height: 700px;
+  position: relative;
+  // z-index: -100;
+  // margin-bottom: 30px;
+}
+
+.content {
+  text-align: center;
+  z-index: 10;
+
+  h1 {
+    font-family: $font-en-primary;
+    font-weight: 900;
+    font-size: 80px;
+    color: #4d4d4f;
+    // background: red;
+  }
+
+  p {
+    font-size: 55px;
+    font-weight: 300;
+    font-family: $font-en-satoshi;
+    color: #4d4d4f;
+  }
+
+  .start-btn {
+    padding: 20px 40px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #4d4d4f;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 60px 0;
+    &:hover {
+      background-color: #312e2e;
+    }
+  }
+  .bip {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    .blinking-green {
+      animation: 1.5s blink-green ease infinite;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+    }
+    @-webkit-keyframes blink-green {
+      from,
+      to {
+        opacity: 0;
+        background-color: #00c956;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .highlight {
+      color: #5d36ff;
+    }
+  }
+}
+.low-button {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-image: linear-gradient(
+    to right,
+    aliceblue,
+    aliceblue,
+    rgb(239, 239, 239),
+    rgb(230, 230, 230),
+    rgb(220, 217, 217),
+    rgb(209, 209, 209),
+    rgb(201, 201, 201),
+    white,
+    aliceblue
+  );
+  z-index: 50;
+  bottom: -25px;
+  // right: 48%;
+  justify-content: center;
+}
+.background-graphics {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: url("/asset/Main_Banner.png") no-repeat center center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 599px) {
+  .content {
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .start-btn {
+      margin: 40px 0;
+    }
+    .bip {
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}
